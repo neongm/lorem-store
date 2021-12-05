@@ -1,0 +1,22 @@
+
+.shadow{
+    box-shadow: 0px 0px 30px #000000;
+}
+
+
+.main-cont{
+    box-shadow: 0px 0px 30px #2121211a;
+}
+.at-least-fullscreen{
+    min-height: 100vh;
+}
+.ipsum{
+    color: #CAD8DE!important;
+}
+.lorem{
+    color: #FFA088!important;
+}
+body{
+    background: rgb(33,37,41);
+    background: linear-gradient(0deg, rgba(33,37,41,1) 0%, rgba(255,160,136,0.4514180672268907) 100%);
+}

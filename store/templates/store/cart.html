@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="row p-4 bg-dark d-flex align-items-start" style="min-height: 70vh;">
+    <div> 
+        <h5 class='lead text-center text-light p-4' style="color: #CAD8DE">Shopping cart</h5>
+
+        {% if cart_items %}
+
+            {% for item in cart_items %}
+            <div class="m-2 mt-3 p-4 rounded d-flex justify-content-between align-items-center" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308); background: #FFA088; height: 100px;">
+                
+                <div class="d-flex">
+                    <div class="bg-dark rounded" style="width: 200px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.445);">
+                        <a href="{% url 'item_detail' item.item.id %}" class="text-decoration-none">
+                        <div class="rounded" style='height: 100%; width: 100%; background-image: url("{{item.item.img_url}}"); background-size: cover; background-position: center;'></div>
+                        </a>
+                    </div>
+
+                    <div class="ms-4 p-4">
+                        <h4 class="lead">product: <strong>{{item.item.name}}</strong></h4>
+                        <div class="lead">{{item.item.sentence}}</div>
+                    </div>
+                </div>
+                <div class="">
+                    <h4 class="lead"><strong>price: {{item.item.price}} x {{item.quantity}}</strong></h4> 
+                    <a href="{% url 'delete_cart_item' item_id=item.id %}" onClick="return window.confirm('точно хочешь удалить?');" class="lead text-decoration-none text-dark"><strong>remove item</strong></a>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="d-flex w-100 justify-content-end p-4 m-2">
+                <div class="lead text-light">total price: <strong> <span id="total_cost" style="font-size: 20pt;">{{total_cost}}</span></strong> RUB</div>
+            </div>
+        {% else %} 
+            <div class="d-flex align-items-center" style="height: 70vh;">
+                <div class="w-100">
+                    <a href="{% url 'store' %}" class="text-decoration-none">
+                        <div>
+                            <h4 class="text-center" style="color: #CAD8DE;">No items in the shopping cart yet</h4>
+                            <h2 class="text-center" style="color: #FFA088;">Go shopping</h2>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+        
+    </div>
+
+</div>
+
+
+{% endblock %}

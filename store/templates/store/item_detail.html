@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <h3 class='text-center'>product details</h3>
+</div>
+
+<div class="row bg-dark"> 
+    <div class="row m-2 p-4 d-flex">
+        
+        <div class="col">
+            <img src="{{ item.img_url }}" width="100%" class="rounded">
+        </div>
+        <div class="col text-light h-100">
+            <div>
+                <h3>{{item.name}}</h3>
+                <p class="lead text-light">{{item.descripotion}}</p>
+            </div>
+            <div >
+                <form method="post" action="{% url 'add_cart_item' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="item_id" value="{{item.pk}}">
+                    <div class="d-flex">
+                        <div class="me-2">
+                            <input class="form-control" style="width: 120px;" type="number" name="quantity" min=1 max=100 value=1>
+                        </div>
+                        <div class="">
+                            {% if request.user.is_authenticated %}
+                            <button class="btn btn-primary text-dark" style="width: 120px;">add to cart</button>
+                            {% else %}
+                            <a href="{% url 'login' %}" class="text-light text-decoration-none ms-1">
+                                <div class="btn btn-primary text-dark">login to add</div>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
