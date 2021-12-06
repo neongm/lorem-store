@@ -6,12 +6,10 @@
 
 <div class="row p-4 bg-dark d-flex align-items-start" style="min-height: 70vh;">
     <div> 
-        <h5 class='lead text-center text-light p-4' style="color: #CAD8DE">Shopping cart</h5>
-
+        <h5 class='lead text-center text-light p-4 text-ipsum'>Shopping cart</h5>
         {% if cart_items %}
-
             {% for item in cart_items %}
-            <div class="m-2 mt-3 p-4 rounded d-flex justify-content-between align-items-center" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308); background: #FFA088; height: 100px;">
+            <div class="m-2 mt-3 p-4 rounded d-flex justify-content-between align-items-center bg-primary" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308); height: 100px;">
                 
                 <div class="d-flex">
                     <div class="bg-dark rounded" style="width: 200px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.445);">
@@ -40,16 +38,14 @@
                 <div class="w-100">
                     <a href="{% url 'store' %}" class="text-decoration-none">
                         <div>
-                            <h4 class="text-center" style="color: #CAD8DE;">No items in the shopping cart yet</h4>
-                            <h2 class="text-center" style="color: #FFA088;">Go shopping</h2>
+                            <h4 class="text-center text-ipsum">No items in the shopping cart yet</h4>
+                            <h2 class="text-center text-lorem">Go shopping</h2>
                         </div>
                     </a>
                 </div>
             </div>
         {% endif %}
-        
     </div>
-
 </div>
 
 
