@@ -20,12 +20,12 @@
 
                     <div class="ms-4 p-4">
                         <h4 class="lead text-light">product: <strong>{{item.item.name}}</strong></h4>
-                        <div class="lead text-light">{{item.item.sentence}}</div>
+                        <div class="lead text-ipsum">{{item.item.sentence}}</div>
                     </div>
                 </div>
                 <div class="">
                     <h4 class="lead text-light"><strong>price: {{item.item.price}} x {{item.quantity}}</strong></h4> 
-                    <a href="{% url 'delete_cart_item' item_id=item.id %}" onClick="return window.confirm('точно хочешь удалить?');" class="lead text-decoration-none text-light"><strong>remove item</strong></a>
+                    <a href="{% url 'delete_cart_item' item_id=item.id %}" onClick="return window.confirm('точно хочешь удалить?');" class="lead text-decoration-none text-ipsum">remove item</a>
                 </div>
             </div>
             {% endfor %}
