@@ -3,25 +3,25 @@
 {% block content %}
 
 
-<div class="row justify-content-center bg-dark">
-    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 bg-white border p-3 rounded" style="margin: 200px 0px;">
-        <h4 class=" m-2 text-dark text-center">register</h4>
+<div class="row justify-content-center bg-dark" style="height: 80vh;">
+    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8 bg-lorem shadow p-3 rounded" style="margin: 200px 0px;">
+        <h4 class=" m-2 text-ipsum text-center">register</h4>
 
         <form method="POST" class="mt-4">
             {% csrf_token %}
-            <h5 class="lead  text-dark text-center">username</h5>
+            <h5 class="lead  text-ipsum text-center">username</h5>
             <input name="username" class="form-control" type="text" placeholder="username">
-            <h5 class="lead  text-dark text-center">password</h5>
+            <h5 class="lead  text-ipsum text-center">password</h5>
             <input name="password1" class="form-control" type="password" placeholder="password">
-            <h5 class="lead  text-dark text-center">repeat password</h5>
+            <h5 class="lead  text-ipsum text-center">repeat password</h5>
             <input name="password2" class="form-control" type="password" placeholder="repeat password">
             <br>
             <button type="submit" class="btn bg-secondary border w-100" >register</button>
         </form>
         {% for message in messages %} <!-- displaying the messages if there is any: -->
         <br>
-        <div class="border rounded p-1 bg-primary">
-            <h6 class="text-dark text-center mt-1">{{message}}</h6>
+        <div class="rounded p-1 bg-primary">
+            <h6 class="text-ipsum text-center mt-1">{{message}}</h6>
         </div>
         {% endfor %}
 
