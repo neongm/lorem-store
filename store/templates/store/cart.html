@@ -4,7 +4,7 @@
 {% block content %}
 
 
-<div class="row p-4 bg-dark d-flex align-items-start" style="min-height: 70vh;">
+<div class="row p-1 bg-dark d-flex align-items-start" style="min-height: 70vh;">
     <div> 
         <h5 class='lead text-center text-light p-4 text-ipsum'>Shopping cart</h5>
         {% if cart_items %}
@@ -12,21 +12,28 @@
             <div class="m-2 mt-3 p-4 rounded d-flex justify-content-between align-items-center bg-primary" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.308); height: 100px;">
                 
                 <div class="d-flex">
+
+                    <!-- image -->
                     <div class="bg-dark rounded" style="width: 200px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.445);">
                         <a href="{% url 'item_detail' item.item.id %}" class="text-decoration-none">
                         <div class="rounded" style='height: 100%; width: 100%; background-image: url("{{item.item.img_url}}"); background-size: cover; background-position: center;'></div>
                         </a>
                     </div>
 
+                    <!-- descripotion -->
                     <div class="ms-4 p-4">
                         <h4 class="lead text-light">product: <strong>{{item.item.name}}</strong></h4>
                         <div class="lead text-ipsum">{{item.item.sentence}}</div>
                     </div>
                 </div>
+
+                <!-- prices -->
                 <div class="">
                     <h4 class="lead text-light"><strong>price: {{item.item.price}} x {{item.quantity}}</strong></h4> 
                     <a href="{% url 'delete_cart_item' item_id=item.id %}" onClick="return window.confirm('точно хочешь удалить?');" class="lead text-decoration-none text-ipsum">remove item</a>
                 </div>
+                
+
             </div>
             {% endfor %}
 
