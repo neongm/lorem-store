@@ -19,13 +19,13 @@
                     </div>
 
                     <div class="ms-4 p-4">
-                        <h4 class="lead">product: <strong>{{item.item.name}}</strong></h4>
-                        <div class="lead">{{item.item.sentence}}</div>
+                        <h4 class="lead text-light">product: <strong>{{item.item.name}}</strong></h4>
+                        <div class="lead text-light">{{item.item.sentence}}</div>
                     </div>
                 </div>
                 <div class="">
-                    <h4 class="lead"><strong>price: {{item.item.price}} x {{item.quantity}}</strong></h4> 
-                    <a href="{% url 'delete_cart_item' item_id=item.id %}" onClick="return window.confirm('точно хочешь удалить?');" class="lead text-decoration-none text-dark"><strong>remove item</strong></a>
+                    <h4 class="lead text-light"><strong>price: {{item.item.price}} x {{item.quantity}}</strong></h4> 
+                    <a href="{% url 'delete_cart_item' item_id=item.id %}" onClick="return window.confirm('точно хочешь удалить?');" class="lead text-decoration-none text-light"><strong>remove item</strong></a>
                 </div>
             </div>
             {% endfor %}
