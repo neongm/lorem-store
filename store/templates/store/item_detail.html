@@ -8,7 +8,7 @@
 </div>
 
 <div class="row bg-dark"> 
-    <div class="row m-0 p-4 d-flex flex-wrap justify-content-center" >
+    <div class="row m-0 p-2 pb-4 pt-4 d-flex flex-wrap justify-content-center" >
         
         <!-- left side -->
         <div class="col-md-5 col-sm-9">
@@ -19,9 +19,10 @@
         <div class="col-md-7 col-sm-12 text-light h-100">
 
             <!-- text -->
-            <div>
+            <div class="mt-2">
                 <h3>{{item.name}}</h3>
                 <p class="lead text-light">{{item.descripotion}}</p>
+                <p class="lead text-light">price: <strong>{{item.price}}</strong> rub</p>
             </div>
 
             <!-- form -->
@@ -30,18 +31,21 @@
                     {% csrf_token %}
                     <input type="hidden" name="item_id" value="{{item.pk}}">
                     <div class="d-flex">
+
                         <div class="me-2">
                             <input class="form-control" style="width: 120px;" type="number" name="quantity" min=1 max=100 value=1>
                         </div>
-                        <div class="">
+
+                        <div class="w-100">
                             {% if request.user.is_authenticated %}
-                            <button class="btn btn-primary text-dark" style="width: 120px;">add to cart</button>
+                            <button class="btn btn-primary text-dark w-100" >add to cart</button>
                             {% else %}
                             <a href="{% url 'login' %}" class="text-light text-decoration-none ms-1">
-                                <div class="btn btn-primary text-dark">login to add</div>
+                                <div class="btn btn-primary text-dark w-100">login to add</div>
                             </a>
                             {% endif %}
                         </div>
+
                     </div>
                 </form>
             </div>
