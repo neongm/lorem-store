@@ -6,16 +6,16 @@
 <div class="row justify-content-center bg-dark" style="height: 80vh;">
     <div class="col-xl-4 col-lg-5 col-md-6 col-sm-8" style="margin: 20vh 0px;">
         <div class="bg-lorem shadow p-3 rounded">
-            <h4 class=" m-2 text-ipsum text-center">register</h4>
+            <h4 class="m-2 text-light text-center">register</h4>
 
             <form method="POST" class="mt-4">
                 {% csrf_token %}
                 <h5 class="lead  text-ipsum text-center">username</h5>
-                <input name="username" class="form-control bg-secondary type="text" placeholder="username">
+                <input name="username" class="form-control" type="text" placeholder="username">
                 <h5 class="lead  text-ipsum text-center">password</h5>
-                <input name="password1" class="form-control bg-secondary" type="password" placeholder="password">
+                <input name="password1" class="form-control" type="password" placeholder="password">
                 <h5 class="lead  text-ipsum text-center">repeat password</h5>
-                <input name="password2" class="form-control bg-secondary" type="password" placeholder="repeat password">
+                <input name="password2" class="form-control" type="password" placeholder="repeat password">
                 <br>
                 <button type="submit" class="btn bg-secondary border w-100" >register</button>
             </form>
