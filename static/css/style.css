@@ -20,3 +20,18 @@ body{
     background: rgb(33,37,41);
     background: linear-gradient(0deg, rgba(33,37,41,1) 0%, rgba(255,160,136,0.4514180672268907) 100%);
 }
+
+.anim-short{
+    opacity: 0.0;
+    animation: anim 0.4s forwards;
+}
+
+.anim-long{
+    opacity: 0.0;
+    animation: anim 3s forwards;
+}
+
+@keyframes anim {
+    0% {opacity: 0.0;}
+    100% {opacity: 1;}
+}
